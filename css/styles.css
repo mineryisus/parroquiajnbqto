@@ -183,20 +183,65 @@ button, input, textarea, select {
 
 .brand-title {
   font-family: var(--font-heading);
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--color-primary);
-  line-height: 1.15;
+  line-height: 1.14;
   letter-spacing: -0.01em;
+  display: flex;
+  flex-direction: column;
 }
 
-.brand-subtitle {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--color-secondary);
+/* Segunda línea: nombre en dorado, mayúsculas y con un brillo muy sutil */
+.brand-acento {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.86em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 2px;
+  color: var(--color-secondary);
+}
+
+/* El brillo se aplica solo si el navegador permite recortar el fondo al texto */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .brand-acento {
+    background-image: linear-gradient(
+      100deg,
+      #ab741d 0%,
+      #c8932c 32%,
+      #e2b961 47%,
+      #f8e7b9 50%,
+      #e2b961 53%,
+      #c8932c 68%,
+      #ab741d 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brand-brillo 9s ease-in-out infinite;
+  }
+}
+
+@keyframes brand-brillo {
+  0%,
+  45% {
+    background-position: 100% 0;
+  }
+  85%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-acento {
+    animation: none !important;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--color-secondary);
+  }
 }
 
 /* Navegación Central */
@@ -253,8 +298,6 @@ button, input, textarea, select {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding-left: 1rem;
-  border-left: 1px solid var(--color-border);
   text-decoration: none;
 }
 
@@ -652,6 +695,12 @@ button, input, textarea, select {
   height: 400px;
   object-fit: cover;
   display: block;
+}
+
+/* Mosaico de San Ignacio: se muestra completo, sin recorte */
+.about-main-img-box img.about-img-portrait {
+  height: auto;
+  object-fit: contain;
 }
 
 .about-floating-card {
@@ -1940,6 +1989,19 @@ textarea.form-control {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
+  /* En una sola columna la imagen se limita en alto para no ocupar toda la pantalla */
+  .about-preview-media {
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .about-main-img-box img.about-img-portrait {
+    height: 460px;
+    object-fit: cover;
+    object-position: center 20%;
+  }
   
   .events-giving-grid {
     grid-template-columns: 1fr;
@@ -1954,6 +2016,24 @@ textarea.form-control {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
+  }
+
+  /* El nombre completo de la parroquia requiere más espacio en la cabecera */
+  .brand-title {
+    font-size: 1rem;
+  }
+
+  .nav-menu {
+    gap: 1.15rem;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+  }
+
+  .header-brand-arquidiocesis .btn,
+  .header-brand-arquidiocesis .d-none-mobile {
+    display: none !important;
   }
 }
 
@@ -1990,10 +2070,11 @@ textarea.form-control {
   }
   
   .brand-title {
-    font-size: 1.05rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 1rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.15;
   }
   
   .header-brand-arquidiocesis {
@@ -2001,8 +2082,8 @@ textarea.form-control {
   }
   
   .arquidiocesis-seal {
-    padding-left: 0.65rem;
-    border-left: 1px solid var(--color-border);
+    padding-left: 0;
+    border-left: 0;
   }
   
   .arquidiocesis-seal .arquidiocesis-info {
@@ -2141,12 +2222,9 @@ textarea.form-control {
     padding-right: 0.75rem;
   }
   
-  .brand-text-block .brand-subtitle {
-    display: none;
-  }
-  
   .brand-title {
-    font-size: 0.95rem;
+    font-size: 0.82rem;
+    line-height: 1.2;
   }
   
   .header-brand-parroquia .brand-logo-img {
@@ -2616,5 +2694,23 @@ a.group-join-value {
   .hero-image-overlay-badge p {
     font-size: 0.7rem;
     line-height: 1.35;
+  }
+}
+
+/* Mosaico de San Ignacio en móviles: proporción natural de la obra */
+@media (max-width: 580px) {
+  .about-main-img-box img.about-img-portrait {
+    height: auto;
+  }
+}
+
+/* Cabecera en pantallas muy estrechas: el nombre completo debe caber en una línea */
+@media (max-width: 360px) {
+  .brand-title {
+    font-size: 0.76rem;
+  }
+
+  .header-brand-parroquia {
+    gap: 0.5rem;
   }
 }
