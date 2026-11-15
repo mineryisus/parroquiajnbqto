@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Parroquia Jesús de Nazaret | Arquidiócesis de Barquisimeto</title>
+  <meta name="description" content="Sitio oficial de la Parroquia Jesús de Nazaret en Barquisimeto. Formación cristiana, espiritualidad Ignaciana, sacramentos, grupos pastorales y labor comunitaria.">
+  <link rel="icon" type="image/png" href="assets/images/logo-parroquia.png">
+
+  <!-- Fuentes Tipográficas Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="css/styles.css?v=20261114b">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+  <!-- ==================== HEADER INSTITUCIONAL (DOBLE LOGO EN ESQUINAS) ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Esquina Izquierda: Logo Parroquia -->
+      <a href="index.html" class="header-brand-parroquia" title="Ir a Inicio - Parroquia Jesús de Nazaret">
+        <img src="assets/images/logo-parroquia.webp" alt="Emblema Dorado Parroquia Jesús de Nazaret" class="brand-logo-img" loading="eager">
+        <div class="brand-text-block">
+          <span class="brand-title">Jesús de Nazaret</span>
+          <span class="brand-subtitle">Parroquia Católica</span>
+        </div>
+      </a>
+
+      <!-- Centro: Navegación Principal -->
+      <nav class="main-navigation" id="main-navigation" aria-label="Menú Principal">
+        <!-- Cabecera interna visible en móviles al desplegar el menú -->
+        <div class="mobile-drawer-header">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/logo-parroquia.webp" alt="Logo Parroquia">
+            <div>
+              <strong style="color: var(--color-primary); font-size: 0.95rem; display: block;">Jesús de Nazaret</strong>
+              <span style="color: var(--color-secondary); font-size: 0.75rem; text-transform: uppercase;">Arquidiócesis de Barquisimeto</span>
+            </div>
+          </div>
+          <img src="assets/images/logo-arquidiocesis.png" alt="Logo Arquidiócesis">
+          <button type="button" class="mobile-nav-close" aria-label="Cerrar menú de navegación">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Inicio</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="grupos.html" class="nav-link">Grupos Parroquiales</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Esquina Derecha: Logo Arquidiócesis y Botón de Acción -->
+      <div class="header-brand-arquidiocesis">
+        <a href="contacto.html" class="btn btn-primary btn-sm d-none-mobile">
+          <i class="fa-regular fa-calendar-check"></i> Planifica tu Visita
+        </a>
+        <a href="https://arquidiocesisdebarquisimeto.org/" target="_blank" rel="noopener noreferrer" class="arquidiocesis-seal" title="Arquidiócesis de Barquisimeto">
+          <img src="assets/images/logo-arquidiocesis.png" alt="Logo de la Arquidiócesis de Barquisimeto" class="arquidiocesis-logo-img" loading="eager">
+          <div class="arquidiocesis-info">
+            <span class="arquidiocesis-label">Perteneciente a</span>
+            <span class="arquidiocesis-name">Arquidiócesis<br>de Barquisimeto</span>
+          </div>
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==================== HERO SECTION (GUÍA UX/UI) ==================== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Columna Texto Hero -->
+          <div class="hero-content">
+            <span class="hero-welcome-badge">
+              <i class="fa-solid fa-cross"></i> Bienvenidos a Casa
+            </span>
+            <h1 class="hero-title">
+              AMAR A DIOS.<br>
+              SERVIR AL PRÓJIMO.<br>
+              <span class="highlight-text">HACER LA DIFERENCIA.</span>
+            </h1>
+            <p class="hero-desc">
+              Somos una Parroquia comprometida con la formación integral de las personas, promoviendo valores cristianos católicos con enfoque en la espiritualidad Ignaciana, liderazgo, fraternidad y compromiso social.
+            </p>
+            <div class="hero-actions">
+              <a href="contacto.html" class="btn btn-primary btn-lg">
+                <i class="fa-regular fa-calendar-check"></i> Planifica tu Visita
+              </a>
+              <a href="nosotros.html" class="btn btn-outline btn-lg">
+                <i class="fa-regular fa-compass"></i> Conoce Nuestra Misión
+              </a>
+            </div>
+
+            <!-- Mini Pills Informativas -->
+            <div class="hero-pills">
+              <div class="hero-pill-item">
+                <i class="fa-solid fa-hands-praying"></i>
+                <div class="pill-text">
+                  <h4>Oración & Misa</h4>
+                  <p>Mié y Vie 5:00 PM<br>Dom 9:30 AM y 5:00 PM</p>
+                </div>
+              </div>
+              <div class="hero-pill-item">
+                <i class="fa-solid fa-book-bible"></i>
+                <div class="pill-text">
+                  <h4>Formación</h4>
+                  <p>Espiritualidad Ignaciana</p>
+                </div>
+              </div>
+              <div class="hero-pill-item">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <div class="pill-text">
+                  <h4>Servicio</h4>
+                  <p>Amor activo por la comunidad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Imagen Hero Templo -->
+          <div class="hero-visual">
+            <div class="hero-image-card">
+              <img src="assets/images/parroquia-templo.jpg" alt="Fachada del Templo de la Parroquia Jesús de Nazaret" loading="eager">
+              <a class="hero-image-overlay-badge" href="https://maps.google.com/?cid=9239731275723414516&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF" target="_blank" rel="noopener noreferrer" title="Ver ubicación en Google Maps" aria-label="Ver la ubicación del templo en Google Maps">
+                <i class="fa-solid fa-church"></i>
+                <div>
+                  <h5>Templo Parroquial Jesús de Nazaret</h5>
+                  <p>Venezuela • Edo. Lara • Barquisimeto<br>Urb. La Carucieña</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square hero-overlay-link-icon" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN SOBRE NOSOTROS PREVIEW ==================== -->
+    <section class="about-preview-section">
+      <div class="container">
+        <div class="about-preview-grid">
+          <!-- Columna Imagen con Cita Ignaciana -->
+          <div class="about-preview-media">
+            <div class="about-main-img-box">
+              <img src="assets/images/parroquia-templo.jpg" alt="Interior y Vida en la Parroquia">
+            </div>
+            <div class="about-floating-card">
+              <p class="ignatian-quote">"En todo amar y servir para la mayor gloria de Dios."</p>
+              <span class="author">San Ignacio de Loyola</span>
+            </div>
+          </div>
+
+          <!-- Columna Contenido -->
+          <div class="about-preview-content">
+            <span class="badge-tag">Sobre Nosotros</span>
+            <h2 class="section-title">Un Lugar Para Encontrarse, Servir y Pertenecer</h2>
+            <p>
+              En la Parroquia Jesús de Nazaret encontrarás una comunidad fraterna donde cada persona es bienvenida como en su propia casa. Guiados por la espiritualidad Ignaciana, discernimos el paso de Dios en nuestra vida cotidiana y formamos caminantes con corazón compasivo y solidario.
+            </p>
+            <div class="about-features-list">
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Enseñanza y Formación Doctrinal Cristiana</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Espiritualidad Ignaciana y Discernimiento</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Grupos y Movimientos para Niños, Jóvenes y Adultos</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Obras de Misericordia y Acompañamiento Comunitario</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Cuidado del Medio Ambiente y Áreas Verdes Parroquiales</span>
+              </div>
+            </div>
+            <a href="nosotros.html" class="btn btn-navy">
+              <i class="fa-solid fa-book-open"></i> Conoce Más Sobre Nosotros
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN GRUPOS PASTORALES PREVIEW ==================== -->
+    <section class="ministries-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag">Nuestros Grupos Pastorales</span>
+          <h2 class="section-title">Comunidades para Cada Etapa de la Vida</h2>
+          <p class="section-subtitle">
+            Espacios de encuentro fraterno, crecimiento espiritual, ecología y voluntariado para caminar juntos en la fe.
+          </p>
+        </div>
+
+        <div class="ministries-grid">
+          <!-- Card Huellas -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box">
+                <img src="assets/images/huellas-logo.png" alt="Logo de Huellas">
+              </div>
+              <span class="ministry-badge">Jóvenes</span>
+            </div>
+            <h3 class="ministry-card-title">Movimiento Huellas</h3>
+            <p class="ministry-card-desc">
+              Movimiento juvenil de espiritualidad ignaciana enfocado en liderazgo cristiano, campamentos, servicio y formación ciudadana.
+            </p>
+            <a href="grupos.html#huellas" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card EJC -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box">
+                <img src="assets/images/ejc-logo.jpg" alt="Logo EJC">
+              </div>
+              <span class="ministry-badge">Jóvenes</span>
+            </div>
+            <h3 class="ministry-card-title">EJC</h3>
+            <p class="ministry-card-desc">
+              Encuentro de Jóvenes con Cristo. Un espacio dinámico para renovar la fe, crear hermandad y seguir a Cristo de forma transformadora.
+            </p>
+            <a href="grupos.html#ejc" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card Catequesis -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box">
+                <i class="fa-solid fa-book-bible"></i>
+              </div>
+              <span class="ministry-badge">Sacramentos</span>
+            </div>
+            <h3 class="ministry-card-title">Catequesis Parroquial</h3>
+            <p class="ministry-card-desc">
+              Preparación en la fe para los sacramentos de Bautismo, Primera Comunión, Confirmación y formación de adultos.
+            </p>
+            <a href="grupos.html#catequesis" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card Misericordia -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <span class="ministry-badge">Servicio</span>
+            </div>
+            <h3 class="ministry-card-title">Ministerio de Misericordia</h3>
+            <p class="ministry-card-desc">
+              Acompañamiento a enfermos, ollas solidarias y asistencia caritativa a los hermanos más vulnerables de la comunidad.
+            </p>
+            <a href="grupos.html#misericordia" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card Sembradores de Alegría (ÁREAS VERDES) -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box" style="background-color: #e8f5e9; color: #2e7d32;">
+                <i class="fa-solid fa-leaf" style="color: #2e7d32;"></i>
+              </div>
+              <span class="ministry-badge" style="background-color: #e8f5e9; color: #2e7d32;">Áreas Verdes</span>
+            </div>
+            <h3 class="ministry-card-title">Sembradores de Alegría</h3>
+            <p class="ministry-card-desc">
+              Grupo enfocado en la ecología parroquial, siembra, embellecimiento y mantenimiento de los jardines y áreas verdes de nuestro templo.
+            </p>
+            <a href="grupos.html#sembradores" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- Card Infancia Misionera (NIÑOS) -->
+          <div class="ministry-card">
+            <div class="ministry-card-header">
+              <div class="ministry-icon-box">
+                <i class="fa-solid fa-children"></i>
+              </div>
+              <span class="ministry-badge">Infantil</span>
+            </div>
+            <h3 class="ministry-card-title">Escuela de Infancia Misionera</h3>
+            <p class="ministry-card-desc">
+              Formación cristiana para los niños de la parroquia: dinámicas, valores misioneros y amistad con Jesús para los más pequeños.
+            </p>
+            <a href="grupos.html#infancia" class="ministry-card-link">
+              Descubrir más <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="grupos.html" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-users"></i> Ver Todos los 12 Grupos Parroquiales
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN DOBLE: EVENTOS Y GENEROSIDAD ==================== -->
+    <section class="events-giving-section">
+      <div class="container">
+        <div class="events-giving-grid">
+          <!-- Columna Izquierda: Misas y Horarios -->
+          <div class="events-column">
+            <div class="events-column-header">
+              <span class="badge-tag">Horarios y Celebraciones</span>
+              <h3 class="events-column-title">Próximas Misas y Encuentros</h3>
+            </div>
+
+            <div class="events-list">
+              <!-- Evento 1 -->
+              <div class="event-item-card">
+                <div class="event-date-badge">
+                  <span class="month">DOM</span>
+                  <span class="day">MISA</span>
+                </div>
+                <div class="event-info">
+                  <h4>Santa Misa Dominical</h4>
+                  <p><i class="fa-regular fa-clock"></i> 9:30 AM y 5:00 PM • Templo Parroquial</p>
+                  <p><i class="fa-solid fa-location-dot"></i> Encuentro eucarístico con toda la comunidad</p>
+                </div>
+                <div class="event-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+
+              <!-- Evento 2 -->
+              <div class="event-item-card">
+                <div class="event-date-badge">
+                  <span class="month">MIÉ-VIE</span>
+                  <span class="day">SEM</span>
+                </div>
+                <div class="event-info">
+                  <h4>Santa Misa Semanal</h4>
+                  <p><i class="fa-regular fa-clock"></i> 5:00 PM</p>
+                  <p><i class="fa-solid fa-hands-praying"></i> Celebración eucarística comunitaria</p>
+                </div>
+                <div class="event-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+
+              <!-- Evento 3 -->
+              <div class="event-item-card">
+                <div class="event-date-badge">
+                  <span class="month">SÁB</span>
+                  <span class="day">JUV</span>
+                </div>
+                <div class="event-info">
+                  <h4>Encuentros de Pastoral Juvenil</h4>
+                  <p><i class="fa-regular fa-clock"></i> Sábados por la tarde (Huellas 3:00 PM | EJC 4:30 PM)</p>
+                  <p><i class="fa-solid fa-users"></i> Salones pastorales</p>
+                </div>
+                <div class="event-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <a href="contacto.html" class="btn btn-outline" style="align-self: flex-start;">
+              <i class="fa-regular fa-calendar-days"></i> Ver Directorio y Horarios Completos
+            </a>
+          </div>
+
+          <!-- Columna Derecha: Generosidad y Ofrendas -->
+          <div class="giving-card-banner">
+            <span class="giving-badge">
+              <i class="fa-solid fa-hand-holding-dollar"></i> Tu Generosidad Transforma Vidas
+            </span>
+            <h3 class="giving-title">Apoya las Obras de Nuestra Parroquia</h3>
+            <p class="giving-desc">
+              Gracias a tu aporte solidario, sostenemos el mantenimiento de nuestro templo, alimentamos a hermanos vulnerables a través del Ministerio de Misericordia y formamos a nuestros niños y jóvenes en la fe católica.
+            </p>
+            <div class="giving-actions">
+              <a href="contacto.html#donaciones" class="btn btn-primary btn-lg">
+                <i class="fa-solid fa-heart"></i> Cómo Colaborar
+              </a>
+              <a href="contacto.html" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-envelope"></i> Contactar Despacho
+              </a>
+            </div>
+            <p class="giving-gratitude">
+              "Cada uno dé como propuso en su corazón, con alegría y gratitud." — ¡Dios bendiga tu generosidad!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DATOS COMUNITARIOS VERIFICABLES ==================== -->
+    <section class="stats-counter-bar">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <i class="fa-solid fa-users stat-icon"></i>
+            <span class="stat-number" data-target="12">12</span>
+            <span class="stat-label">Grupos Pastorales Activos</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-scale-balanced stat-icon"></i>
+            <span class="stat-number" data-target="7">7</span>
+            <span class="stat-label">Valores Institucionales</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-cross stat-icon"></i>
+            <span class="stat-number" data-target="3">3</span>
+            <span class="stat-label">Sacramentos de Iniciación</span>
+          </div>
+          <div class="stat-item">
+            <i class="fa-solid fa-heart stat-icon"></i>
+            <span class="stat-number" data-target="1">1</span>
+            <span class="stat-label">Comunidad Parroquial</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIDA PARROQUIAL (CONTENIDO INSTITUCIONAL) ==================== -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge-tag">Nuestra Vida Parroquial</span>
+          <h2 class="section-title">Una Comunidad que Camina Junta</h2>
+          <p class="section-subtitle">Espacios de formación, servicio y encuentro que puedes vivir en la Parroquia Jesús de Nazaret.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <i class="fa-solid fa-book-bible testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              <strong>Formación en la fe.</strong> Catequesis para niños, jóvenes y adultos, preparación para los sacramentos y acompañamiento para crecer en la vida cristiana.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-cross"></i></div>
+              <div class="author-info">
+                <h5>Catequesis Parroquial</h5>
+                <span>Formación y sacramentos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fa-solid fa-hand-holding-heart testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              <strong>Servicio y misericordia.</strong> Acompañamiento a familias vulnerables, ollas solidarias, entrega de medicamentos y visitas a enfermos de la comunidad.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div class="author-info">
+                <h5>Ministerio de la Misericordia</h5>
+                <span>Caridad y acción social</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <i class="fa-solid fa-users testimonial-quote-icon"></i>
+            <p class="testimonial-text">
+              <strong>Comunidad y juventud.</strong> Huellas, EJC, Legión de María, EMC y los demás grupos pastorales ofrecen un lugar para crecer, servir y caminar juntos en la fe.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-people-group"></i></div>
+              <div class="author-info">
+                <h5>Grupos Pastorales</h5>
+                <span>12 comunidades activas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BANNER PRE-FOOTER (DORADO Y AZUL) ==================== -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-inner">
+          <div class="cta-banner-left">
+            <div class="cta-banner-icon">
+              <i class="fa-solid fa-church"></i>
+            </div>
+            <div class="cta-banner-text">
+              <h3>¡Te esperamos con los brazos abiertos!</h3>
+              <p>Acompáñanos este domingo y vive la alegría de la fe en comunidad.</p>
+            </div>
+          </div>
+          <div class="cta-banner-right">
+            <a href="contacto.html" class="btn btn-navy btn-lg">
+              <i class="fa-solid fa-map-location-dot"></i> Planifica tu Visita Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ANEXO INSTITUCIONAL AL FINAL (ANEXO DE CONTACTO Y HORARIOS) ==================== -->
+    <section class="annex-bar-section" aria-label="Anexo de Contacto y Horarios">
+      <div class="container">
+        <div class="annex-grid">
+          <!-- Ubicación oficial con enlace -->
+          <div class="annex-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Ubicación del Templo:</strong>
+              <a href="https://maps.google.com/?cid=9239731275723414516&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF" target="_blank" rel="noopener noreferrer" class="annex-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver enlace directo en Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Despacho Parroquial -->
+          <div class="annex-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Despacho Parroquial:</strong>
+              <span>Atención: 0416-8316724</span><br>
+              <small style="color: #c4d3e5;">Miércoles y Viernes 4:00 PM</small>
+            </div>
+          </div>
+
+          <!-- Horarios de Misas -->
+          <div class="annex-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Horarios de Santa Misa:</strong>
+              <span>Mié y Vie: 5:00 PM</span><br>
+              <span>Domingos: 9:30 AM y 5:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Redes Sociales y WhatsApp -->
+          <div class="annex-item">
+            <i class="fa-solid fa-share-nodes"></i>
+            <div>
+              <strong>Canales y Redes:</strong>
+              <div class="annex-socials">
+                <a href="https://wa.me/584168316724" target="_blank" rel="noopener noreferrer" title="WhatsApp Despacho" aria-label="WhatsApp del Despacho Parroquial"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://maps.google.com/?cid=9239731275723414516&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF" target="_blank" rel="noopener noreferrer" title="Google Maps" aria-label="Ubicación en Google Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER INSTITUCIONAL ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Columna 1: Logos e Identidad -->
+        <div class="footer-col-brand">
+          <div class="footer-logos-row">
+            <img src="assets/images/logo-parroquia.webp" alt="Parroquia Jesús de Nazaret" class="footer-logo-img">
+            <img src="assets/images/logo-arquidiocesis.png" alt="Arquidiócesis de Barquisimeto" class="footer-logo-img">
+          </div>
+          <h4 class="footer-brand-title">Parroquia Jesús de Nazaret</h4>
+          <p class="footer-brand-desc">
+            Comunidad eclesial de espiritualidad Ignaciana comprometida con la formación en valores cristianos, la vida comunitaria y el servicio al prójimo en Barquisimeto.
+          </p>
+        </div>
+
+        <!-- Columna 2: Enlaces Rápidos -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Enlaces Rápidos</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
+            <li class="footer-link-item"><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i> Nosotros</a></li>
+            <li class="footer-link-item"><a href="grupos.html"><i class="fa-solid fa-chevron-right"></i> Grupos Parroquiales</a></li>
+            <li class="footer-link-item"><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i> Contacto y Horarios</a></li>
+            <li class="footer-link-item"><a href="contacto.html#donaciones"><i class="fa-solid fa-chevron-right"></i> Donaciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Grupos y Ministerios -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Grupos Pastorales</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="grupos.html#huellas"><i class="fa-solid fa-chevron-right"></i> Movimiento Huellas</a></li>
+            <li class="footer-link-item"><a href="grupos.html#ejc"><i class="fa-solid fa-chevron-right"></i> EJC (Encuentro de Jóvenes con Cristo)</a></li>
+            <li class="footer-link-item"><a href="grupos.html#catequesis"><i class="fa-solid fa-chevron-right"></i> Catequesis Parroquial</a></li>
+            <li class="footer-link-item"><a href="grupos.html#misericordia"><i class="fa-solid fa-chevron-right"></i> Min. de la Misericordia</a></li>
+            <li class="footer-link-item"><a href="grupos.html#sembradores"><i class="fa-solid fa-chevron-right"></i> Sembradores de Alegría</a></li>
+            <li class="footer-link-item"><a href="grupos.html#infancia"><i class="fa-solid fa-chevron-right"></i> Infancia Misionera</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Información de Contacto -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Información de Contacto</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span><a href="https://maps.google.com/?cid=9239731275723414516&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Ubicación verificada en Google Maps</a></span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span><a href="tel:04168316724" style="color: inherit;">0416-8316724</a> (Despacho Parroquial)</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>Despacho: Mié y Vie 4:00 PM</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-cross"></i>
+              <span>Jurisdicción de la Arquidiócesis de Barquisimeto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra Inferior de Derechos -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Parroquia Jesús de Nazaret. Todos los derechos reservados.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="https://maps.google.com/?cid=9239731275723414516&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          <a href="privacidad.html">Aviso de Privacidad</a>
+          <a href="contacto.html#directorio-coordinadores">Contacto Pastoral</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js?v=20261114b"></script>
+</body>
+</html>

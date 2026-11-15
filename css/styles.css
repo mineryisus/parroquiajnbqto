@@ -1,0 +1,2620 @@
+/* ==========================================================================
+   PARROQUIA JESÚS DE NAZARET - SISTEMA DE DISEÑO CORPORATIVO WEB (V2)
+   Arquidiócesis de Barquisimeto | Espiritualidad Ignaciana
+   Optimizado para Móviles, Tablets y Computadoras
+   ========================================================================== */
+
+:root {
+  /* Paleta Cromática Institucional */
+  --color-primary: #0e294b;        /* Azul Marino Solemne */
+  --color-primary-light: #183d6e;  /* Azul Marino Medio */
+  --color-primary-dark: #081a31;   /* Azul Noche Profundo */
+  --color-secondary: #c8932c;      /* Oro Sagrado / Dorado */
+  --color-secondary-hover: #b37d1f;/* Oro Intenso */
+  --color-secondary-light: #fef8eb;/* Oro Suave Pastel */
+  --color-accent: #e5a93c;         /* Acento Dorado Cálido */
+  
+  /* Tonos Neutros y Fondo */
+  --color-bg: #faf9f6;             /* Blanco Alabastro / Marfil */
+  --color-surface: #ffffff;        /* Blanco Puro */
+  --color-surface-alt: #f3f5f8;    /* Gris Claro Azulado */
+  --color-border: #e2e8f0;         /* Borde Suave */
+  --color-border-light: #edf2f7;   /* Borde Tenue */
+  
+  /* Tipografía y Textos */
+  --color-text-main: #192434;      /* Texto Primario */
+  --color-text-muted: #5a687c;     /* Texto Secundario / Subtítulos */
+  --color-text-light: #8896aa;     /* Texto Atenuado */
+  --color-text-white: #ffffff;     /* Blanco */
+  
+  /* Tipografías */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-subheading: 'Cinzel', serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Sombras y Elevaciones */
+  --shadow-sm: 0 2px 6px rgba(14, 41, 75, 0.05);
+  --shadow-md: 0 6px 18px rgba(14, 41, 75, 0.08);
+  --shadow-lg: 0 14px 32px rgba(14, 41, 75, 0.12);
+  --shadow-xl: 0 20px 45px rgba(14, 41, 75, 0.18);
+  --shadow-gold: 0 8px 24px rgba(200, 147, 44, 0.28);
+  
+  /* Bordes Redondeados */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: all 0.5s ease;
+  
+  /* Dimensiones */
+  --container-max: 1240px;
+  --header-height: 84px;
+}
+
+/* ==========================================================================
+   RESET Y REGLAS BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Utilidades */
+.d-none-mobile {
+  display: inline-flex !important;
+}
+
+.text-gold {
+  color: var(--color-secondary) !important;
+}
+
+/* Contenedor Global */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ==========================================================================
+   HEADER PRINCIPAL CON DOBLE LOGO EN ESQUINAS
+   ========================================================================== */
+.site-header {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header.scrolled {
+  box-shadow: var(--shadow-md);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  gap: 1rem;
+}
+
+/* Esquina Izquierda: Logo Parroquia */
+.header-brand-parroquia {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-brand-parroquia .brand-logo-img {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(200, 147, 44, 0.25));
+  transition: var(--transition);
+}
+
+.header-brand-parroquia:hover .brand-logo-img {
+  transform: scale(1.05);
+}
+
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* Navegación Central */
+.main-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  position: relative;
+  padding: 0.5rem 0.2rem;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-secondary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Esquina Derecha: Logo Arquidiócesis y Botón de Acción */
+.header-brand-arquidiocesis {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+.arquidiocesis-seal {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-border);
+  text-decoration: none;
+}
+
+.arquidiocesis-logo-img {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.arquidiocesis-seal:hover .arquidiocesis-logo-img {
+  transform: scale(1.06);
+}
+
+.arquidiocesis-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.arquidiocesis-label {
+  font-size: 0.68rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.arquidiocesis-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* Botón Hamburguesa Móvil */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.55rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1010;
+  line-height: 1;
+}
+
+.mobile-drawer-header {
+  display: none;
+}
+
+/* ==========================================================================
+   BOTONES Y COMPONENTES UI
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(200, 147, 44, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-navy {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-navy:hover {
+  background-color: var(--color-primary-light);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline-white:hover {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.84rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.02rem;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.badge-tag.badge-navy {
+  background-color: rgba(14, 41, 75, 0.08);
+  color: var(--color-primary);
+}
+
+/* Títulos de Sección */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   HERO BANNER PRINCIPAL (INSPIRADO EN EL DISEÑO GUÍA)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%);
+  padding: 4rem 0 4.5rem 0;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 147, 44, 0.08) 0%, rgba(200, 147, 44, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-welcome-badge {
+  color: var(--color-secondary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.12;
+  margin-bottom: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title .highlight-text {
+  color: var(--color-secondary);
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.hero-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  border-top: 1px solid rgba(14, 41, 75, 0.1);
+  padding-top: 1.8rem;
+}
+
+.hero-pill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.hero-pill-item i {
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.pill-text h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.pill-text p {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Imagen Hero Showcase */
+.hero-visual {
+  position: relative;
+  width: 100%;
+}
+
+.hero-image-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 5px solid #ffffff;
+  background-color: var(--color-surface);
+  width: 100%;
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.hero-image-card:hover img {
+  transform: scale(1.03);
+}
+
+.hero-image-overlay-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(14, 41, 75, 0.9);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-image-overlay-badge:hover,
+.hero-image-overlay-badge:focus-visible {
+  background: rgba(14, 41, 75, 0.98);
+  border-color: rgba(200, 147, 44, 0.7);
+}
+
+.hero-image-overlay-badge i {
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.hero-image-overlay-badge .hero-overlay-link-icon {
+  font-size: 0.8rem;
+  margin-left: auto;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
+}
+
+.hero-image-overlay-badge:hover .hero-overlay-link-icon,
+.hero-image-overlay-badge:focus-visible .hero-overlay-link-icon {
+  opacity: 1;
+}
+
+.hero-image-overlay-badge h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.hero-image-overlay-badge p {
+  font-size: 0.78rem;
+  color: #d1dbe7;
+}
+
+/* ==========================================================================
+   SECCIÓN SOBRE NOSOTROS PREVIEW (SPLIT LAYOUT)
+   ========================================================================== */
+.about-preview-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-surface);
+}
+
+.about-preview-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-preview-media {
+  position: relative;
+  width: 100%;
+}
+
+.about-main-img-box {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  width: 100%;
+}
+
+.about-main-img-box img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-floating-card {
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 1.15rem 1.35rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  max-width: 260px;
+  border: 3px solid #ffffff;
+}
+
+.about-floating-card .ignatian-quote {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #f7fafc;
+}
+
+.about-floating-card .author {
+  font-size: 0.72rem;
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 6px;
+  display: block;
+}
+
+.about-preview-content .section-title {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.about-preview-content p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about-features-list {
+  margin-bottom: 2rem;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.about-feature-item i {
+  color: var(--color-secondary);
+  font-size: 1.15rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECCIÓN GRUPOS PASTORALES (CARDS GRID)
+   ========================================================================== */
+.ministries-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-bg);
+}
+
+.ministries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.ministry-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 1.65rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.ministry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(200, 147, 44, 0.4);
+}
+
+.ministry-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.ministry-icon-box {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  min-height: 58px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-secondary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ministry-icon-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ministry-icon-box i {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.ministry-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-surface-alt);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.ministry-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+}
+
+.ministry-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.ministry-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  transition: var(--transition);
+}
+
+.ministry-card-link:hover {
+  color: var(--color-primary);
+  gap: 0.65rem;
+}
+
+/* ==========================================================================
+   SECCIÓN DOBLE: EVENTOS/MISAS + GENEROSIDAD
+   ========================================================================== */
+.events-giving-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-surface);
+}
+
+.events-giving-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Columna Izquierda: Misas y Horarios */
+.events-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.events-column-header {
+  margin-bottom: 1.75rem;
+}
+
+.events-column-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.event-item-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--color-bg);
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.event-item-card:hover {
+  border-color: var(--color-secondary);
+  transform: translateX(4px);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.event-date-badge {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  text-align: center;
+  min-width: 65px;
+  flex-shrink: 0;
+}
+
+.event-date-badge .month {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  display: block;
+}
+
+.event-date-badge .day {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.event-info {
+  flex-grow: 1;
+}
+
+.event-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.event-info p {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
+.event-arrow {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Columna Derecha: Generosidad y Donaciones */
+.giving-card-banner {
+  background: linear-gradient(135deg, #0e294b 0%, #081a31 100%);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.giving-card-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom right, rgba(200, 147, 44, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.giving-badge {
+  color: var(--color-secondary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.giving-title {
+  font-family: var(--font-heading);
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.giving-desc {
+  color: #c4d3e5;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.giving-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.giving-gratitude {
+  font-size: 0.85rem;
+  color: #9cb5cf;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   BARRA DE ESTADÍSTICAS COMUNITARIAS (NAVY BLUE STATS)
+   ========================================================================== */
+.stats-counter-bar {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 1.85rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: #b8c9dc;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   TESTIMONIOS DE LA COMUNIDAD (REAL PEOPLE, REAL STORIES)
+   ========================================================================== */
+.testimonials-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-bg);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(200, 147, 44, 0.3);
+}
+
+.testimonial-quote-icon {
+  color: var(--color-secondary);
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-size: 0.96rem;
+  color: var(--color-text-main);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1rem;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.author-info h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.author-info span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   BANNER CALL TO ACTION PRE-FOOTER (DORADO Y AZUL)
+   ========================================================================== */
+.cta-banner-section {
+  background: linear-gradient(135deg, #c8932c 0%, #b37d1f 100%);
+  color: #ffffff;
+  padding: 2.75rem 0;
+}
+
+.cta-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cta-banner-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: rgba(14, 41, 75, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.cta-banner-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+}
+
+.cta-banner-text p {
+  font-size: 0.95rem;
+  color: #fff6e4;
+}
+
+/* ==========================================================================
+   ANEXO INSTITUCIONAL AL FINAL (REEMPLAZA EL ANTIGUO TOP BAR)
+   Se ubica al final antes del footer con diseño integrado
+   ========================================================================== */
+.annex-bar-section {
+  background-color: #0b1a2e;
+  color: #e2eaf5;
+  border-top: 2px solid var(--color-secondary);
+  padding: 2.2rem 0;
+  font-size: 0.92rem;
+}
+
+.annex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.annex-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.annex-item i {
+  color: var(--color-secondary);
+  font-size: 1.35rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.annex-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.annex-item a.annex-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  word-break: break-all;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.annex-item a.annex-link:hover {
+  color: #ffffff;
+}
+
+.annex-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.annex-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.annex-socials a:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FOOTER INSTITUCIONAL
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: #d1dbe7;
+  padding: 4.5rem 0 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 1.1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-col-brand .footer-logos-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-img {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.footer-brand-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #a8b8cc;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col-title {
+  font-family: var(--font-subheading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-secondary);
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link-item a {
+  color: #b0c2d6;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+
+.footer-link-item a:hover {
+  color: var(--color-secondary);
+  transform: translateX(4px);
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: #b0c2d6;
+}
+
+.footer-contact-item i {
+  color: var(--color-secondary);
+  font-size: 1.05rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: #8b9eb5;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   UTILIDADES DE ACCESIBILIDAD
+   ========================================================================== */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   PÁGINA NOSOTROS: ESTILOS
+   ========================================================================== */
+.about-history-section {
+  padding: 2.25rem 0 5.5rem;
+  background-color: var(--color-surface);
+}
+
+.about-history-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin: 4rem 0;
+}
+
+.mission-card, .vision-card {
+  background: var(--color-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before, .vision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background-color: var(--color-secondary);
+}
+
+.mission-icon {
+  font-size: 2.2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.mission-card h3, .vision-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.values-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-bg);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.value-card {
+  background-color: var(--color-surface);
+  padding: 2rem 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary);
+}
+
+.value-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem auto;
+  border-radius: 50%;
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.value-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.22rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   PÁGINA GRUPOS PARROQUIALES: FILTROS Y FICHAS
+   ========================================================================== */
+.groups-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.group-detailed-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 2.75rem;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.group-detailed-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(200, 147, 44, 0.4);
+}
+
+.group-detailed-media {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  min-height: 320px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.group-detailed-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.group-logo-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 64px;
+  height: 64px;
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 6px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-secondary);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.group-detailed-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.group-detailed-body .group-category {
+  color: var(--color-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.group-detailed-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--color-primary);
+  margin-bottom: 0.85rem;
+}
+
+.group-detailed-body p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.group-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.group-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.group-meta-item i {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   PÁGINA CONTACTO: DESPLEGABLE DE COORDINADORES Y DETALLES
+   ========================================================================== */
+.contact-section {
+  padding: 2.25rem 0 5.5rem;
+  background-color: var(--color-bg);
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card-box {
+  background-color: var(--color-surface);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: var(--transition);
+}
+
+.contact-card-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-secondary-light);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.contact-card-text h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.contact-card-text p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* Estilos Específicos para el Desplegable de Coordinadores */
+.coordinator-directory-section {
+  margin-top: 4.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 3rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.coordinator-select-box {
+  max-width: 620px;
+  margin: 1.5rem auto 2.5rem auto;
+}
+
+.coordinator-select-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+  text-align: center;
+}
+
+.coordinator-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(200, 147, 44, 0.12);
+  cursor: pointer;
+}
+
+.coordinator-card-display {
+  background: linear-gradient(135deg, #0e294b 0%, #153359 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: var(--transition);
+}
+
+.coordinator-avatar-badge {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: var(--shadow-gold);
+}
+
+.coordinator-details-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.coordinator-role-tag {
+  display: inline-block;
+  color: var(--color-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+}
+
+.coordinator-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 580px) {
+  .coordinator-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.coordinator-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d1dbe7;
+}
+
+.coordinator-meta-item i {
+  color: var(--color-secondary);
+}
+
+.coordinator-meta-item a {
+  white-space: nowrap;
+}
+
+/* Formulario */
+.contact-form-container {
+  background-color: var(--color-surface);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.contact-form-container h3 {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-container p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #fafbfc;
+  color: var(--color-text-main);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--color-secondary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(200, 147, 44, 0.15);
+}
+
+textarea.form-control {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.form-alert {
+  display: none;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.form-alert.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Sección de Mapa Google */
+.map-section {
+  padding: 0 0 5rem 0;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TOTAL ADAPTACIÓN A MÓVILES)
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .hero-visual {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  .about-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .events-giving-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .d-none-mobile {
+    display: none !important;
+  }
+  
+  .mobile-nav-toggle {
+    display: block;
+  }
+  
+  .site-header {
+    height: auto;
+    padding: 0.4rem 0;
+  }
+  
+  .site-header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .header-brand-parroquia {
+    gap: 0.65rem;
+    min-width: 0;
+  }
+  
+  .header-brand-parroquia .brand-logo-img {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .brand-title {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .header-brand-arquidiocesis {
+    gap: 0.65rem;
+  }
+  
+  .arquidiocesis-seal {
+    padding-left: 0.65rem;
+    border-left: 1px solid var(--color-border);
+  }
+  
+  .arquidiocesis-seal .arquidiocesis-info {
+    display: none;
+  }
+  
+  .arquidiocesis-logo-img {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+  
+  .main-navigation {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: var(--color-surface);
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    box-shadow: var(--shadow-xl);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .main-navigation.is-open {
+    transform: translateX(0);
+  }
+  
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .mobile-drawer-header img {
+    height: 46px;
+    width: 46px;
+    object-fit: contain;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .nav-link {
+    font-size: 1.15rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-sm);
+    border-bottom: 1px solid var(--color-border-light);
+    display: block;
+    width: 100%;
+  }
+  
+  .nav-link.active,
+  .nav-link:hover {
+    background-color: var(--color-secondary-light);
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  
+  .hero-image-card img {
+    height: 280px;
+  }
+  
+  .about-main-img-box img {
+    height: 260px;
+  }
+  
+  .about-floating-card {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+  
+  .hero-pills {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-history-grid,
+  .mission-vision-grid,
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .group-detailed-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .group-detailed-media {
+    min-height: 220px;
+    height: 220px;
+  }
+  
+  .coordinator-card-display {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .coordinator-avatar-badge {
+    margin: 0 auto;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .site-header .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .brand-text-block .brand-subtitle {
+    display: none;
+  }
+  
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  
+  .header-brand-parroquia .brand-logo-img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .arquidiocesis-logo-img {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+  
+  .hero-title {
+    font-size: 1.95rem;
+  }
+  
+  .hero-desc {
+    font-size: 0.98rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-banner-inner {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .cta-banner-left {
+    flex-direction: column;
+  }
+  
+  .annex-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   MEJORAS V3: ACCESIBILIDAD, MÓDULO "ÚNETE AL GRUPO" Y FORMULARIO
+   ========================================================================== */
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 3000;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  color: #ffffff;
+}
+
+.mobile-nav-close {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.mobile-nav-close:hover,
+.mobile-nav-close:focus-visible {
+  background: var(--color-secondary-light);
+  border-color: var(--color-secondary);
+}
+
+/* Módulo desplegable "Únete al grupo" */
+.group-join-details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.group-join-details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: var(--transition);
+}
+
+.group-join-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.group-join-details summary:hover,
+.group-join-details summary:focus-visible {
+  background-color: var(--color-secondary-light);
+}
+
+.group-join-details summary .join-chevron {
+  color: var(--color-secondary);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.group-join-details[open] summary .join-chevron {
+  transform: rotate(180deg);
+}
+
+.group-join-content {
+  padding: 0 1.1rem 1.15rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.group-join-intro {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin: 0.85rem 0 0.5rem;
+}
+
+.group-join-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.86rem;
+}
+
+.group-join-row:last-of-type {
+  border-bottom: 0;
+}
+
+.group-join-label {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.group-join-value {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: right;
+  line-height: 1.45;
+}
+
+a.group-join-value {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.group-join-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.group-join-note {
+  color: var(--color-text-light);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+}
+
+/* Formulario: casilla de privacidad y alertas de error */
+.form-check {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.form-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+}
+
+.form-check label {
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.form-check label a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.form-alert.error {
+  display: block;
+  background-color: #fde8e8;
+  color: #8a1c1c;
+  border: 1px solid #f5c2c2;
+}
+
+.form-alert a {
+  color: inherit;
+}
+
+.form-note {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.form-note a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.coordinator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.coordinator-card-display a {
+  color: #ffffff;
+}
+
+/* Ajustes móviles adicionales */
+@media (max-width: 868px) {
+  .mobile-nav-close {
+    display: inline-flex;
+  }
+
+  .mobile-drawer-header {
+    gap: 0.75rem;
+  }
+
+  .main-navigation {
+    top: var(--site-header-height, 98px);
+    height: calc(100dvh - var(--site-header-height, 98px));
+  }
+
+  .coordinator-directory-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .contact-form-container {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .map-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 580px) {
+  .main-navigation {
+    top: var(--site-header-height, 98px);
+    height: calc(100dvh - var(--site-header-height, 98px));
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .group-detailed-body {
+    padding: 1.6rem 1.25rem;
+  }
+
+  .group-detailed-body h3 {
+    font-size: 1.45rem;
+  }
+
+  .group-join-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .group-join-value {
+    text-align: left;
+  }
+
+  .coordinator-directory-section {
+    padding: 2rem 1.1rem;
+    margin-top: 3rem;
+  }
+
+  .contact-form-container {
+    padding: 1.75rem 1.15rem;
+  }
+
+  .map-container {
+    height: 260px;
+  }
+
+  .donations-panel {
+    padding: 2.25rem 1.15rem !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .donations-panel h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .donations-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1.25rem !important;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta-banner-right .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Página de privacidad */
+.legal-section {
+  padding: 2.25rem 0 5.5rem;
+  background-color: var(--color-bg);
+}
+
+.legal-container {
+  max-width: 880px;
+}
+
+.legal-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--color-secondary-light);
+  color: var(--color-primary);
+  border: 1px solid rgba(200, 147, 44, 0.35);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.legal-container h2 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  color: var(--color-primary);
+  margin: 2rem 0 0.65rem;
+}
+
+.legal-container p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 0.85rem;
+}
+
+.legal-container a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 580px) {
+  .legal-section {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .legal-container h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .diocese-panel {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 2.5rem 1.5rem !important;
+    text-align: center;
+  }
+
+  .diocese-panel .btn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .diocese-panel {
+    padding: 2rem 1.15rem !important;
+  }
+}
+
+/* Ajuste del rótulo de ubicación sobre la imagen del hero en pantallas pequeñas */
+@media (max-width: 480px) {
+  .hero-image-overlay-badge {
+    padding: 0.7rem 0.9rem;
+    gap: 0.6rem;
+  }
+
+  .hero-image-overlay-badge i {
+    font-size: 1.15rem;
+  }
+
+  .hero-image-overlay-badge .hero-overlay-link-icon {
+    font-size: 0.7rem;
+  }
+
+  .hero-image-overlay-badge h5 {
+    font-size: 0.84rem;
+  }
+
+  .hero-image-overlay-badge p {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
+}
